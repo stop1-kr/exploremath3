@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>중3 수학 탐구 월드 · 로그인</title>
+<style>
+
+@font-face{font-family:'DungGeunMo';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/DungGeunMo.woff') format('woff');font-weight:400;font-style:normal;font-display:swap;}
+:root{
+  --grass:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2716%27%20height%3D%2716%27%20shape-rendering%3D%27crispEdges%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%235fa83c%27/%3E%3Crect%20x%3D%274%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%236ab04c%27/%3E%3Crect%20x%3D%278%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%2377bd57%27/%3E%3Crect%20x%3D%2712%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%236ab04c%27/%3E%3Crect%20x%3D%270%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23569b36%27/%3E%3Crect%20x%3D%274%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23569b36%27/%3E%3Crect%20x%3D%278%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23569b36%27/%3E%3Crect%20x%3D%2712%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23569b36%27/%3E%3Crect%20x%3D%270%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%235fa83c%27/%3E%3Crect%20x%3D%274%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%236ab04c%27/%3E%3Crect%20x%3D%278%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23569b36%27/%3E%3Crect%20x%3D%2712%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%236ab04c%27/%3E%3Crect%20x%3D%270%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23569b36%27/%3E%3Crect%20x%3D%274%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23569b36%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%236ab04c%27/%3E%3Crect%20x%3D%2712%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23569b36%27/%3E%3C/svg%3E");
+  --dirt:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2716%27%20height%3D%2716%27%20shape-rendering%3D%27crispEdges%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%238b5a2b%27/%3E%3Crect%20x%3D%274%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%238b5a2b%27/%3E%3Crect%20x%3D%278%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%238b5a2b%27/%3E%3Crect%20x%3D%2712%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%2396633a%27/%3E%3Crect%20x%3D%270%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%237d4f26%27/%3E%3Crect%20x%3D%274%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%2396633a%27/%3E%3Crect%20x%3D%278%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%2396633a%27/%3E%3Crect%20x%3D%2712%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%237d4f26%27/%3E%3Crect%20x%3D%270%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%238b5a2b%27/%3E%3Crect%20x%3D%274%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%237d4f26%27/%3E%3Crect%20x%3D%278%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23734722%27/%3E%3Crect%20x%3D%2712%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23734722%27/%3E%3Crect%20x%3D%270%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%2396633a%27/%3E%3Crect%20x%3D%274%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23734722%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%2396633a%27/%3E%3Crect%20x%3D%2712%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%238b5a2b%27/%3E%3C/svg%3E");
+  --stone:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2716%27%20height%3D%2716%27%20shape-rendering%3D%27crispEdges%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%237f7f7f%27/%3E%3Crect%20x%3D%274%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%237f7f7f%27/%3E%3Crect%20x%3D%278%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23949494%27/%3E%3Crect%20x%3D%2712%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23767676%27/%3E%3Crect%20x%3D%270%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%238a8a8a%27/%3E%3Crect%20x%3D%274%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%238a8a8a%27/%3E%3Crect%20x%3D%278%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23767676%27/%3E%3Crect%20x%3D%2712%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23949494%27/%3E%3Crect%20x%3D%270%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%237f7f7f%27/%3E%3Crect%20x%3D%274%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%237f7f7f%27/%3E%3Crect%20x%3D%278%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23767676%27/%3E%3Crect%20x%3D%2712%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23767676%27/%3E%3Crect%20x%3D%270%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23767676%27/%3E%3Crect%20x%3D%274%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%237f7f7f%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%237f7f7f%27/%3E%3Crect%20x%3D%2712%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%237f7f7f%27/%3E%3C/svg%3E");
+  --plank:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2716%27%20height%3D%2716%27%20shape-rendering%3D%27crispEdges%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%239c6a38%27/%3E%3Crect%20x%3D%274%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23b47f48%27/%3E%3Crect%20x%3D%278%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23a9743f%27/%3E%3Crect%20x%3D%2712%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%238f6033%27/%3E%3Crect%20x%3D%270%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%238f6033%27/%3E%3Crect%20x%3D%274%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%239c6a38%27/%3E%3Crect%20x%3D%278%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23a9743f%27/%3E%3Crect%20x%3D%2712%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23a9743f%27/%3E%3Crect%20x%3D%270%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23a9743f%27/%3E%3Crect%20x%3D%274%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%238f6033%27/%3E%3Crect%20x%3D%278%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23b47f48%27/%3E%3Crect%20x%3D%2712%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23a9743f%27/%3E%3Crect%20x%3D%270%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%239c6a38%27/%3E%3Crect%20x%3D%274%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23b47f48%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23b47f48%27/%3E%3Crect%20x%3D%2712%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%239c6a38%27/%3E%3C/svg%3E");
+  --dark:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2716%27%20height%3D%2716%27%20shape-rendering%3D%27crispEdges%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23292931%27/%3E%3Crect%20x%3D%274%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23292931%27/%3E%3Crect%20x%3D%278%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%232f2f38%27/%3E%3Crect%20x%3D%2712%27%20y%3D%270%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%233a3a45%27/%3E%3Crect%20x%3D%270%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%2335353f%27/%3E%3Crect%20x%3D%274%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%232f2f38%27/%3E%3Crect%20x%3D%278%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%2335353f%27/%3E%3Crect%20x%3D%2712%27%20y%3D%274%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%232f2f38%27/%3E%3Crect%20x%3D%270%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%23292931%27/%3E%3Crect%20x%3D%274%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%233a3a45%27/%3E%3Crect%20x%3D%278%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%2335353f%27/%3E%3Crect%20x%3D%2712%27%20y%3D%278%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%233a3a45%27/%3E%3Crect%20x%3D%270%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%232f2f38%27/%3E%3Crect%20x%3D%274%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%2335353f%27/%3E%3Crect%20x%3D%278%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%232f2f38%27/%3E%3Crect%20x%3D%2712%27%20y%3D%2712%27%20width%3D%274%27%20height%3D%274%27%20fill%3D%27%2335353f%27/%3E%3C/svg%3E");
+  --sky-top:#4aa7e0;
+  --sky-bot:#9fd6f5;
+  --ink:#1b1b22;
+  --paper:#f4f1e4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'DungGeunMo','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  color:var(--paper);
+  background:#4aa7e0;
+  image-rendering:pixelated;
+  -webkit-font-smoothing:none;
+  letter-spacing:.02em;
+}
+img,div{image-rendering:pixelated}
+/* ---------- 마인크래프트 UI 공통 ---------- */
+.mc-panel{
+  background:var(--dark);
+  background-color:#33333d;
+  border:4px solid #14141a;
+  box-shadow:inset -6px -6px 0 rgba(0,0,0,.45), inset 6px 6px 0 rgba(255,255,255,.14), 0 0 0 4px #5a5a68;
+}
+.mc-btn{
+  display:inline-block;
+  font-family:inherit;
+  font-size:17px;
+  line-height:1;
+  color:#fff;
+  text-shadow:2px 2px 0 rgba(0,0,0,.6);
+  background-color:#7a7a86;
+  background-image:var(--stone);
+  background-blend-mode:multiply;
+  border:4px solid #14141a;
+  box-shadow:inset -5px -5px 0 rgba(0,0,0,.42), inset 5px 5px 0 rgba(255,255,255,.28);
+  padding:14px 18px;
+  cursor:pointer;
+  user-select:none;
+  transition:filter .08s linear;
+}
+.mc-btn:hover{filter:brightness(1.15)}
+.mc-btn:active{box-shadow:inset 5px 5px 0 rgba(0,0,0,.42), inset -5px -5px 0 rgba(255,255,255,.16);transform:translateY(2px)}
+.mc-btn.green{background-color:#5b9c3a}
+.mc-btn.brown{background-color:#a9743f;background-image:var(--plank)}
+.mc-input{
+  width:100%;
+  font-family:inherit;
+  font-size:17px;
+  color:#fff;
+  background:#101014;
+  border:3px solid #a0a0aa;
+  box-shadow:inset 3px 3px 0 rgba(0,0,0,.8);
+  padding:13px 12px;
+  outline:none;
+}
+.mc-input::placeholder{color:#787884}
+.mc-input:focus{border-color:#ffd75e}
+/* ---------- 하늘 / 구름 ---------- */
+.sky{position:fixed;inset:0;z-index:-2;background:linear-gradient(180deg,var(--sky-top) 0%,var(--sky-bot) 78%)}
+.cloud{position:absolute;width:112px;height:20px;background:#fff;opacity:.9}
+.cloud::before,.cloud::after{content:'';position:absolute;background:#fff}
+.cloud::before{width:64px;height:20px;top:-20px;left:20px}
+.cloud::after{width:32px;height:20px;top:-40px;left:40px}
+.cloud.a{top:120px;left:-140px;animation:drift 58s linear infinite}
+.cloud.b{top:230px;left:-320px;transform:scale(1.5);animation:drift 84s linear infinite}
+.cloud.c{top:70px;left:-620px;transform:scale(.8);animation:drift 42s linear infinite}
+@keyframes drift{from{margin-left:0}to{margin-left:calc(100vw + 800px)}}
+.ground{position:fixed;left:0;right:0;bottom:0;height:132px;z-index:-1;background-color:#7d4f26;background-image:var(--dirt);border-top:0}
+.ground::before{content:'';position:absolute;left:0;right:0;top:0;height:28px;background-color:#5fa83c;background-image:var(--grass);border-bottom:4px solid rgba(0,0,0,.28)}
+
+.wrap{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 16px 170px}
+.sign{
+  text-align:center;padding:18px 26px;margin-bottom:22px;
+  background-color:#a9743f;background-image:var(--plank);background-blend-mode:multiply;
+  border:5px solid #4b331b;box-shadow:inset -6px -6px 0 rgba(0,0,0,.35),inset 6px 6px 0 rgba(255,255,255,.2);
+}
+.sign h1{font-size:30px;color:#fff8dc;text-shadow:3px 3px 0 rgba(0,0,0,.6);line-height:1.35}
+.sign p{margin-top:8px;font-size:14px;color:#ffe9a8;text-shadow:2px 2px 0 rgba(0,0,0,.5)}
+.panel{width:100%;max-width:430px;padding:22px}
+.tabs{display:flex;gap:8px;margin-bottom:20px}
+.tab{flex:1;font-family:inherit;font-size:16px;padding:12px 0;color:#c9c9d4;cursor:pointer;
+  background:#22222a;border:3px solid #14141a;box-shadow:inset 3px 3px 0 rgba(0,0,0,.5)}
+.tab.active{color:#fff;background:#5b9c3a;box-shadow:inset -4px -4px 0 rgba(0,0,0,.35),inset 4px 4px 0 rgba(255,255,255,.25)}
+.pane{display:none;flex-direction:column;gap:14px}
+.pane.active{display:flex}
+label{font-size:14px;color:#ffd75e;text-shadow:2px 2px 0 rgba(0,0,0,.6);display:block;margin-bottom:7px}
+.row{margin:0}
+.msg{margin-top:16px;font-size:14px;line-height:1.6;min-height:22px;text-align:center;color:#ffb4b4;text-shadow:2px 2px 0 rgba(0,0,0,.6)}
+.msg.ok{color:#a6e07a}
+.msg.info{color:#cfe8ff}
+.hint{margin-top:18px;font-size:13px;color:#e8f4ff;text-shadow:2px 2px 0 rgba(0,0,0,.45);text-align:center;line-height:1.7}
+.badge-demo{display:none;margin-bottom:14px;padding:10px 12px;font-size:13px;line-height:1.6;
+  color:#1b1b22;background:#ffd75e;border:3px solid #8a6b16}
+@media(max-width:480px){.sign h1{font-size:22px}.mc-btn{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="sky"><div class="cloud a"></div><div class="cloud b"></div><div class="cloud c"></div></div>
+<div class="ground"></div>
+
+<main class="wrap">
+  <div class="sign">
+    <h1>중3 수학 탐구 월드</h1>
+    <p>MATH EXPLORATION WORLD · GRADE 3</p>
+  </div>
+
+  <section class="panel mc-panel">
+    <div id="demoBadge" class="badge-demo">
+      데모 모드입니다. Apps Script 주소(GAS_URL)를 넣기 전까지는 이 브라우저에만 계정이 저장됩니다.
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" type="button" data-tab="login">로그인</button>
+      <button class="tab" type="button" data-tab="signup">회원가입</button>
+    </div>
+
+    <form id="loginPane" class="pane active" autocomplete="on">
+      <div class="row"><label for="li_sid">학번</label>
+        <input class="mc-input" id="li_sid" name="sid" inputmode="numeric" maxlength="6" placeholder="예) 30115" required></div>
+      <div class="row"><label for="li_pw">비밀번호</label>
+        <input class="mc-input" id="li_pw" name="pw" type="password" maxlength="30" placeholder="비밀번호 입력" required></div>
+      <button class="mc-btn green" type="submit" id="loginBtn">월드 입장하기</button>
+    </form>
+
+    <form id="signupPane" class="pane">
+      <div class="row"><label for="su_sid">학번 (숫자 4~6자리)</label>
+        <input class="mc-input" id="su_sid" inputmode="numeric" maxlength="6" placeholder="예) 30115" required></div>
+      <div class="row"><label for="su_name">이름</label>
+        <input class="mc-input" id="su_name" maxlength="10" placeholder="예) 김수학" required></div>
+      <div class="row"><label for="su_pw">비밀번호 (4자 이상)</label>
+        <input class="mc-input" id="su_pw" type="password" maxlength="30" placeholder="비밀번호 입력" required></div>
+      <div class="row"><label for="su_pw2">비밀번호 확인</label>
+        <input class="mc-input" id="su_pw2" type="password" maxlength="30" placeholder="한 번 더 입력" required></div>
+      <button class="mc-btn brown" type="submit" id="signupBtn">계정 만들기</button>
+    </form>
+
+    <p id="msg" class="msg"></p>
+  </section>
+
+  <p class="hint">비밀번호를 잊었다면 선생님께 문의하세요.</p>
+</main>
+
+<script>
+/* =========================================================================
+   1) 아래 GAS_URL 에 Google Apps Script 웹앱 배포 주소를 붙여넣으세요.
+      (형식: https://script.google.com/macros/s/AKfycb..../exec)
+      붙여넣기 전에는 '데모 모드'로 이 브라우저에만 계정이 저장됩니다.
+   ========================================================================= */
+var GAS_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+var DEMO = GAS_URL.indexOf("PASTE_YOUR") === 0;
+var MAIN_PAGE = "main.html";
+
+var msgEl = document.getElementById('msg');
+function say(text, kind){ msgEl.textContent = text; msgEl.className = 'msg ' + (kind || ''); }
+
+if (DEMO) { document.getElementById('demoBadge').style.display = 'block'; }
+
+/* ---------- 탭 전환 ---------- */
+var tabs = document.querySelectorAll('.tab');
+for (var i = 0; i < tabs.length; i++) {
+  tabs[i].addEventListener('click', function () {
+    document.querySelector('.tab.active').classList.remove('active');
+    this.classList.add('active');
+    document.querySelector('.pane.active').classList.remove('active');
+    document.getElementById(this.dataset.tab + 'Pane').classList.add('active');
+    say('');
+  });
+}
+
+/* ---------- 서버 통신 (POST 우선, 실패 시 JSONP) ---------- */
+function jsonp(params) {
+  return new Promise(function (resolve, reject) {
+    var cb = 'mw_cb_' + Date.now() + '_' + Math.floor(Math.random() * 10000);
+    var s = document.createElement('script');
+    var timer = setTimeout(function () { cleanup(); reject(new Error('시간 초과')); }, 15000);
+    function cleanup() { clearTimeout(timer); delete window[cb]; if (s.parentNode) s.parentNode.removeChild(s); }
+    window[cb] = function (data) { cleanup(); resolve(data); };
+    var q = ['callback=' + cb];
+    for (var k in params) { q.push(encodeURIComponent(k) + '=' + encodeURIComponent(params[k])); }
+    s.src = GAS_URL + '?' + q.join('&');
+    s.onerror = function () { cleanup(); reject(new Error('네트워크 오류')); };
+    document.head.appendChild(s);
+  });
+}
+
+async function api(payload) {
+  if (DEMO) return demoApi(payload);
+  try {
+    var res = await fetch(GAS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // 프리플라이트 방지
+      body: JSON.stringify(payload)
+    });
+    return await res.json();
+  } catch (e) {
+    return await jsonp(payload);   // CORS 차단 환경 대비
+  }
+}
+
+/* ---------- 데모(로컬) 저장소 ---------- */
+function demoDB() { try { return JSON.parse(localStorage.getItem('mw_demo_users') || '{}'); } catch (e) { return {}; } }
+function demoSave(db) { localStorage.setItem('mw_demo_users', JSON.stringify(db)); }
+function demoApi(p) {
+  var db = demoDB();
+  if (p.action === 'signup') {
+    if (db[p.sid]) return { ok: false, message: '이미 등록된 학번입니다.' };
+    db[p.sid] = { name: p.name, pw: p.pw };
+    demoSave(db);
+    return { ok: true, message: '가입 완료(데모)' };
+  }
+  if (p.action === 'login') {
+    var u = db[p.sid];
+    if (!u) return { ok: false, message: '등록되지 않은 학번입니다.' };
+    if (u.pw !== p.pw) return { ok: false, message: '비밀번호가 일치하지 않습니다.' };
+    return { ok: true, name: u.name, token: 'demo-token' };
+  }
+  return { ok: false, message: '알 수 없는 요청' };
+}
+
+/* ---------- 로그인 ---------- */
+document.getElementById('loginPane').addEventListener('submit', async function (ev) {
+  ev.preventDefault();
+  var sid = document.getElementById('li_sid').value.trim();
+  var pw = document.getElementById('li_pw').value;
+  if (!/^[0-9]{4,6}$/.test(sid)) { return say('학번은 숫자 4~6자리로 입력하세요.'); }
+  if (!pw) { return say('비밀번호를 입력하세요.'); }
+
+  var btn = document.getElementById('loginBtn');
+  btn.disabled = true; btn.textContent = '접속 중...'; say('서버에 연결하는 중입니다.', 'info');
+  try {
+    var r = await api({ action: 'login', sid: sid, pw: pw });
+    if (r && r.ok) {
+      localStorage.setItem('mw_user', JSON.stringify({ sid: sid, name: r.name, token: r.token, ts: Date.now() }));
+      say('환영합니다, ' + r.name + '님! 월드로 이동합니다.', 'ok');
+      setTimeout(function () { location.href = MAIN_PAGE; }, 600);
+    } else {
+      say((r && r.message) || '로그인에 실패했습니다.');
+    }
+  } catch (e) {
+    say('서버에 연결할 수 없습니다. 잠시 후 다시 시도하세요.');
+  }
+  btn.disabled = false; btn.textContent = '월드 입장하기';
+});
+
+/* ---------- 회원가입 ---------- */
+document.getElementById('signupPane').addEventListener('submit', async function (ev) {
+  ev.preventDefault();
+  var sid = document.getElementById('su_sid').value.trim();
+  var name = document.getElementById('su_name').value.trim();
+  var pw = document.getElementById('su_pw').value;
+  var pw2 = document.getElementById('su_pw2').value;
+
+  if (!/^[0-9]{4,6}$/.test(sid)) { return say('학번은 숫자 4~6자리로 입력하세요.'); }
+  if (name.length < 2) { return say('이름을 2자 이상 입력하세요.'); }
+  if (pw.length < 4) { return say('비밀번호는 4자 이상이어야 합니다.'); }
+  if (pw !== pw2) { return say('비밀번호가 서로 다릅니다.'); }
+
+  var btn = document.getElementById('signupBtn');
+  btn.disabled = true; btn.textContent = '등록 중...'; say('계정을 만드는 중입니다.', 'info');
+  try {
+    var r = await api({ action: 'signup', sid: sid, name: name, pw: pw });
+    if (r && r.ok) {
+      say('가입이 완료되었습니다. 로그인 탭에서 접속하세요.', 'ok');
+      document.querySelector('.tab[data-tab="login"]').click();
+      document.getElementById('li_sid').value = sid;
+      document.getElementById('li_pw').focus();
+      say('가입 완료! 비밀번호를 입력해 로그인하세요.', 'ok');
+    } else {
+      say((r && r.message) || '가입에 실패했습니다.');
+    }
+  } catch (e) {
+    say('서버에 연결할 수 없습니다. 잠시 후 다시 시도하세요.');
+  }
+  btn.disabled = false; btn.textContent = '계정 만들기';
+});
+
+/* 이미 로그인되어 있으면 바로 메인으로 */
+(function () {
+  try {
+    var u = JSON.parse(localStorage.getItem('mw_user') || 'null');
+    if (u && u.sid && Date.now() - u.ts < 1000 * 60 * 60 * 12) { location.replace(MAIN_PAGE); }
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
